@@ -92,7 +92,9 @@ class Game extends React.Component {
       const desc = move ? "Go to move #" + move : "Go to game start";
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="moves" onClick={() => this.jumpTo(move)}>
+            {desc}
+          </button>
         </li>
       );
     });
@@ -101,9 +103,13 @@ class Game extends React.Component {
     if (winner) {
       status = "Winner is player: " + (this.state.xIsNext ? "O" : "X");
     }
+    if (!winner && this.state.stepNumber == 9) {
+      status = "DRAW! Play again!";
+    }
 
     return (
       <div className="game">
+        <h1>Tic Tac Toe</h1>
         <div className="game-board">
           <Board
             squares={current.squares}
@@ -111,8 +117,14 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+          {status ? (
+            <div className="status">{status}</div>
+          ) : (
+            <div className="no-status">{status}</div>
+          )}
+          <div className="move-list">
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
