@@ -1,11 +1,24 @@
+html,
 body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: beige;
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
 }
 
+.move-list {
+  padding: 0px;
+}
+
 ol,
-ul {
-  padding-left: 30px;
+ol::marker {
+  padding-left: 20px;
+  text-align: center;
 }
 
 .board-row:after {
@@ -15,22 +28,35 @@ ul {
 }
 
 .status {
+  text-align: center;
   margin-bottom: 10px;
+  padding: 3px;
+  font-weight: bolder;
+  color: green;
+  border: solid 1px;
+}
+
+.no-status {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  color: green;
+  border: hidden;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: rgb(248, 246, 227);
+  border: 2px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 45px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 80px;
+  height: 90px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 90px;
 }
 
 .square:focus {
@@ -42,10 +68,47 @@ ul {
 }
 
 .game {
+  width: fit-content;
+  padding-top: 1vh;
+  padding-left: 40vw;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .game-info {
-  margin-left: 20px;
+  padding-top: 25px;
+  justify-content: center;
+}
+
+.moves {
+  background-color: bisque;
+  font-size: medium;
+  border: 0px;
+  padding: 5px;
+  margin: 2px;
+  width: 250px;
+}
+
+.moves:hover {
+  background-color: burlywood;
+}
+
+button:hover {
+  background-color: rgb(247, 221, 186);
+}
+
+.moves:focus {
+  font-weight: bold;
+  border: solid 1px maroon;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  padding-bottom: 2px;
+  color: rgb(2, 71, 2);
+  font-size: xxx-large;
+  font-family: cursive;
 }
