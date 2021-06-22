@@ -112,3 +112,13 @@ h1 {
   font-size: xxx-large;
   font-family: cursive;
 }
+
+@media only screen and (max-width: 576px) {
+  .game {
+    padding-left: 8vw;
+  }
+
+  h1 {
+    font-size: xx-large;
+  }
+}
