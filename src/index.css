@@ -11,6 +11,34 @@ body {
   margin: 20px;
 }
 
+.name {
+  display: flex;
+  justify-items: inherit;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  padding-bottom: 2px;
+  color: rgb(2, 71, 2);
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+button.name-button {
+  width: 200px;
+  color: rgb(2, 71, 2);
+  font-weight: bolder;
+  background-color: antiquewhite;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
 .move-list {
   padding: 0px;
 }
@@ -19,6 +47,10 @@ ol,
 ol::marker {
   padding-left: 20px;
   text-align: center;
+}
+
+.board-row-winner {
+  border-color: red;
 }
 
 .board-row:after {
@@ -75,6 +107,7 @@ ol::marker {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-items: center;
 }
 
 .game-info {
@@ -102,15 +135,6 @@ button:hover {
 .moves:focus {
   font-weight: bold;
   border: solid 1px maroon;
-}
-
-h1 {
-  text-align: center;
-  margin: 0px;
-  padding-bottom: 2px;
-  color: rgb(2, 71, 2);
-  font-size: xxx-large;
-  font-family: cursive;
 }
 
 @media only screen and (max-width: 576px) {
